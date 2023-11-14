@@ -13,4 +13,6 @@ Pagina web arquitectura de software
 - crear pagina de acerca de nosotros
 - crear pagina de blog
 - crear pagina de contacto
-- 
+
+  ### Terminados
+  NULL
