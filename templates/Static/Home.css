@@ -1,0 +1,77 @@
+.navhome{
+    background: yellow;
+    height: 70px;
+}
+
+.Butserv{
+    position: absolute;
+    top: 300%;
+    left: 35%;
+    height: 50px;
+    width: 150px;
+}
+
+.ButReserv{
+    position: absolute;
+    top: 305%;
+    left: 54%;
+    height: 50px;
+    width: 150px;
+}
+
+.ButConsult{
+    position: absolute;
+    top: 200%;
+    left: 35%;
+    height: 50px;
+}
+
+.ButHserv{
+    position: absolute;
+    top: 200%;
+    left: 54%;
+    height: 50px;
+}
+
+.ButFP{
+    position: absolute;
+    top: 400%;
+    left: 35%;
+    height: 50px;
+    width: 150px;
+}
+
+.ButCont{
+    position: absolute;
+    top: 400%;
+    left: 54%;
+    height: 50px;
+    width: 150px;
+}
+
+.no-padding{
+    height: 50px;
+    width: 1550px;
+    position: absolute;
+    top: 610%;
+}
+
+.padding{
+    height: 150px;
+    background: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
