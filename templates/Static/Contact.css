@@ -1,0 +1,30 @@
+.navContact{
+    background: yellow;
+    height: 70px;
+}
+
+.ImgNavC{
+    position: absolute;
+    left: 1570%;
+    width: 50px;
+}
+
+.no-padding-contact{
+    height: 280px;
+    background: greenyellow;
+}
+
+.s6{
+    height: 280px;
+}
+
+.responsive{
+    height: 200px;
+}
+
+.no-padding-contact-2{
+    height: 300px;
+    background: greenyellow;
+
+}
+
