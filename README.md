@@ -7,7 +7,6 @@ Pagina web arquitectura de software
 - Crear conexión a bd con django
 - verificar funcionamiento de la conexion
 - crear pagina de login
-- crear pagina home
 - crear pagina de servicios
 - crear pagina de reserva hora
 - crear pagina de acerca de nosotros
@@ -15,6 +14,6 @@ Pagina web arquitectura de software
 - crear pagina de contacto
 
   ### Terminados
-  NULL
+  -Pagina Home
 ### Framework para css con material design 3
 - https://www.beercss.com/
