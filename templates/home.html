@@ -3,54 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
     <link rel="stylesheet" href="../templates/static/css/home.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,100..700,0..1,-50..200" />
     <link href="https://cdn.jsdelivr.net/npm/beercss@3.4.7/dist/cdn/beer.min.css" rel="stylesheet">
-    <title>Document</title>
-<body>
-    <nav class="navhome">
-        <h5 class="max center-align">SERVIEXPRESS</h5>
-        <button class="Butserv">
-          <img src="../templates/static/img/Bserv.png">
-          <span>Servicios</span>
+</head>
+<body class="white">
+    <header class="white">
+      <nav class="primary-container white right-margin">
+        <img class="logoNav" src="../templates/static/img/logoServiexpress.svg">
+      <nav class="max right-align round no-space">
+        <button class="primary light-blue10 border left-round small">
+          <i class>
+            <span class="material-symbols-outlined">home</span>
+          </i>
+          Home
         </button>
-        <button class="ButReserv">
-          <img src="../templates/static/img/ButReserv.png">
-          <span>Reserva De Hora</span>
+        <button class="primary light-blue10 small border no-round">
+          <i class>
+            <span class="material-symbols-outlined">service_toolbox</span>
+          </i>
+          Servicios
         </button>
-        <button class="ButConsult">
-          <img src="../templates/static/img/ButReloj.png">
-          <span>Consulta De Estado</span>
+        <button class="primary light-blue10 small border no-round">
+          <i class>
+            <span class="material-symbols-outlined">groups</span>
+          </i>
+          Nosotros
         </button>
-        <button class="ButHserv">
-          <img src="../templates/static/img/ButHserv.png">
-          <span>Historial De Servicios</span>
+        <button class="primary light-blue10 small no-round">
+          <i class>
+            <span class="material-symbols-outlined">rss_feed</span>
+          </i>
+          Blog
         </button>
-        <button class="ButFP">
-          <img src="../templates/static/img/ButFP.jpg">
-          <span>Facturacion/Pago</span>
+        <button class="primary light-blue10 small no-round">
+          <i class>
+            <span class="material-symbols-outlined">contact_page</span>
+          </i>
+          Contacto
         </button>
-        <button class="circle transparent">
-          <img class="responsive" src="../templates/static/img/taller.jpg">
+        
+        <button class="primary light-blue10 small no-round">
+          <span>Cuenta</span>
+          <i>account_circle</i>
+          <menu class="no-wrap">
+            <a class="primary light-blue10 small no-round">Login</a>
+            <a class="primary light-blue10 small no-round">Crear</a>
+          </menu>
+        </button>
+
+        <button class="primary red7 small right-round">
+          <i class>
+            <span class="material-symbols-outlined">event</span>
+          </i>
+          Reservar Hora
         </button>
       </nav>
-      <article class="no-padding">
-        <img class="responsive" src="../templates/static/img/MECANICOS-TALLER-1080x675.jpg"><!----><!---->
-        <div class="absolute bottom left right padding bottom-shadow white-text">
-          <nav>
-            <h5>SERVIEXPRESS</h5>
-            <button class="ButCont">
-              <img src="../templates/static/img/Butcont.jpg">
-              <span>Contacto</span>
-            </button>
-          </nav>
+    </nav>
+    </header>
+
+  <section>
+    <main class="responsive max">
+    <div>
+      <article class="padding-top primary-container blue10">
+        <div class="grid small-space">
+          <div class="s6 responsive"><!---->
+            <video autoplay loop class="responsive">
+              
+            </video><!---->
+          </div>
+          <div class="s6 primary-container white border-round">
+            <div class="tabs primary-container yellow">
+              <a data-ui="#page1"><b>Estamos contigo</b>           
+                <i>
+                  <span class="material-symbols-outlined">handshake</span>
+                </i>
+              </a>
+              <a data-ui="#page2"><b>Horarios</b>
+                <i>
+                  <span class="material-symbols-outlined">schedule</span>
+                </i>
+              </a>
+              <a data-ui="#page3"><b>Ubicación</b>
+                <i>
+                  <span class="material-symbols-outlined">map</span>
+                </i>
+              </a>
+            </div>
+            
+            <div class="page active" id="page1">
+              <div class="s6">
+                <img class="responsive no-border" src="../templates/static/img/mechaniclarge.jpg"><!----><!---->
+                <div class="absolute bottom left right padding small-blur top-shadow white-text tiny-line">
+                  <div class="bottom"><p>En SERVIEXPRESS nos dedicamos a brindar servicios de alta calidad para mantener 
+                    tu vehículo en óptimas condiciones. <br>Desde reparaciones especializadas hasta mantenimiento preventivo, 
+                    nuestro equipo altamente capacitado utiliza tecnología de vanguardia para ofrecer soluciones rápidas y eficientes. 
+                    <br>Confía en nosotros para cuidar de tu automóvil con profesionalismo y compromiso.
+                    ¡Tu seguridad y satisfacción son nuestra prioridad en cada servicio que realizamos!</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="page" id="page2">
+              <div class="s6">
+                <img class="center" src="../templates/static/img/horario.png"><!----><!---->
+              </div>
+            </div>
+            <div class="page" id="page3">
+              <div class="s6">
+                <img class="responsive no-border" src="../templates/static/img/map.png"><!----><!---->
+              </div>
+            </div>
+          </div>
         </div>
       </article>
-      
-
-    
-    
-      
+    </div>
+  </main>
+  </section>
     <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.7/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"></script>
 </body>
+<footer>
+  <nav>
+      <button class="circle transparent max right-align">
+        <i>forward_to_inbox</i>
+      </button>
+      <button class="circle transparent">
+        <i>call</i>
+      </button>
+      <button class="circle transparent">
+        <i>support_agent</i>
+      </button>
+  </nav>
+</footer>
 </html>
+
+

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    <link rel="stylesheet" href="../templates/static/css/home.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,100..700,0..1,-50..200" />
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.4.7/dist/cdn/beer.min.css" rel="stylesheet">
+</head>
+<body class="white">
+    <header class="white">
+      <nav class="primary-container white right-margin">
+        <img class="logoNav" src="../templates/static/img/logoServiexpress.svg">
+      <nav class="max right-align round no-space">
+        <button class="primary light-blue10 border left-round small">
+          <i class>
+            <span class="material-symbols-outlined">home</span>
+          </i>
+          Home
+        </button>
+        <button class="primary light-blue10 small border no-round">
+          <i class>
+            <span class="material-symbols-outlined">service_toolbox</span>
+          </i>
+          Servicios
+        </button>
+        <button class="primary light-blue10 small border no-round">
+          <i class>
+            <span class="material-symbols-outlined">groups</span>
+          </i>
+          Nosotros
+        </button>
+        <button class="primary light-blue10 small no-round">
+          <i class>
+            <span class="material-symbols-outlined">rss_feed</span>
+          </i>
+          Blog
+        </button>
+        <button class="primary light-blue10 small no-round">
+          <i class>
+            <span class="material-symbols-outlined">contact_page</span>
+          </i>
+          Contacto
+        </button>
+        
+        <button class="primary light-blue10 small no-round">
+          <span>Cuenta</span>
+          <i>account_circle</i>
+          <menu class="no-wrap">
+            <a class="primary light-blue10 small no-round">Login</a>
+            <a class="primary light-blue10 small no-round">Crear</a>
+          </menu>
+        </button>
+
+        <button class="primary red7 small right-round">
+          <i class>
+            <span class="material-symbols-outlined">event</span>
+          </i>
+          Reservar Hora
+        </button>
+      </nav>
+    </nav>
+<section>
+    <div class="snackbar green7 white-text" id="snackbarGood">Se ha reservado su hora con éxito.</div>
+
+    <dialog class="top" id="dialogInspeccion">
+        <nav class="border-round">
+            <h5>Servicios de Inspección</h5>
+        </nav>
+        <div>A continuación marque los servicios que desea agendar</div>
+        <div class="row center-align">
+            <label class="checkbox">
+              <input type="checkbox">
+              <span></span>
+            </label>
+            <div class="max padding-center"><p>1. Inspección de seguridad general.</p> </div>
+            <label class="checkbox">
+                <input type="checkbox">
+                <span></span>
+              </label>
+            <div class="max"><p>2. Inspección de frenos.</p> </div>
+            <label class="checkbox">
+                <input type="checkbox">
+                <span></span>
+              </label>
+            <div class="max"><p>Inspección de neumáticos.</p> </div>
+            <label class="checkbox">
+                <input type="checkbox">
+                <span></span>
+              </label>
+            <div class="max"><p>4. Inspección de luces y señalización.</p></div>
+            <label class="checkbox">
+                <input type="checkbox">
+                <span></span>
+              </label>
+            <div class="max"><p>5. Inspección de fluidos.</p></div>
+            <label class="checkbox">
+                <input type="checkbox">
+                <span></span>
+              </label>
+            <div class="max"><p>6. Inspección de la suspensión.</p></div>
+            <label class="checkbox">
+                <input type="checkbox">
+                <span></span>
+              </label>
+              <div class=""></div>
+            <div class="max"><p>7. Inspección de la batería y el sistema eléctrico.</p></div>
+            <label class="checkbox">
+                <input type="checkbox">
+                <span></span>
+              </label>
+            <div class="max"><p>8. Inspección de la dirección y alineación.</p></div>
+            <label class="checkbox">
+                <input type="checkbox">
+                <span></span>
+              </label>
+            <div class="min padding-bottom"><p>9. Inspección de emisiones.</p></div>
+            <label class="checkbox">
+                <input type="checkbox">
+                <span></span>
+              </label>
+            <div class="max"><p>10. Inspección de sistemas de climatización.</p></div>
+            
+        </div>
+
+        <nav class="right-align">
+          <button data-ui="#dialogInspeccion" class="border white">Cerrar</button>
+          <button class="blue10" data-ui="#snackbarGood">Confirmar</button>
+        </nav>
+      </dialog>
+      <main class="responsive max">
+        <div class="grid max">
+          <div class="s12 m12 l6">
+            <article class="round primary light-blue10">
+                 <div class="s6">
+                    <img class="responsive no-border" src="../templates/static/img/descInspeccion.png"><!----><!---->
+                 </div>
+                <h5>Inspección</h5>
+                <div>Descubre en ServiExpress inspecciones de calidad para tu vehículo. 
+                    Cambios de aceite, reparaciones y más, con atención experta y resultados confiables. 
+                    ¡Tu auto en las mejores manos!
+                </div>
+                <nav>
+                  <button data-ui="#dialogInspeccion" class="yellow black-text">Agenda Aquí <i>schedule</i></button>
+                </nav>
+              </article>
+          </div>
+          <div class="s12 m12 l6">
+            <article class="round primary light-blue10">
+                <div class="s6">
+                    <img class="responsive no-border" src="../templates/static/img/descDiagnostico.png"><!----><!---->
+                </div>
+                <h5>Diagnóstico</h5>
+                <div>En ServiExpress, destacamos por diagnósticos precisos. 
+                    Identificamos y resolvemos problemas eficientemente, asegurando un rendimiento óptimo. 
+                    Confía en nosotros para un servicio confiable y transparente.
+                </div>
+                <nav>
+                  <button class="yellow black-text">Agenda Aquí <i>schedule</i></button>
+                </nav>
+              </article>
+          </div>
+          <div class="s12 m12 l6">
+            <article class="round primary light-blue10">
+                <div class="s6">
+                    <img class="responsive no-border" src="../templates/static/img/descMejoras.png"><!----><!---->
+                </div>
+                <h5>Mejoras</h5>
+                <div>En ServiExpress, destacamos por mejoras especializadas. 
+                    Desde ajustes de motor hasta mejoras en frenos, ofrecemos servicios que elevan tu experiencia de conducción. 
+                    Confía en nosotros para llevar tu auto al siguiente nivel.
+                </div>
+                <nav>
+                  <button class="yellow black-text">Agenda Aquí <i>schedule</i></button>
+                </nav>
+              </article>
+          </div>
+          <div class="s12 m12 l6">
+            <article class="round primary light-blue10">
+                <div class="s6">
+                    <img class="responsive no-border" src="../templates/static/img/garantia.png"><!----><!---->
+                  </div>
+                <h5>Garantía</h5>
+                <div>En ServiExpress, respaldamos nuestros servicios con garantía de satisfacción. 
+                    Nos comprometemos a superar tus expectativas con resultados confiables y atención excepcional. 
+                    Confía en nosotros para mantener tu vehículo en su mejor estado, respaldado por nuestra garantía de satisfacción.
+                </div>
+                <nav>
+                  <button class="yellow black-text">Agenda Aquí <i>schedule</i></button>
+                </nav>
+              </article>
+          </div>
+        </div>
+      </main>
+</section>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.7/dist/cdn/beer.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"></script>
+</body>
+<footer>
+<nav>
+  <button class="circle transparent max right-align">
+    <i>forward_to_inbox</i>
+  </button>
+  <button class="circle transparent">
+    <i>call</i>
+  </button>
+  <button class="circle transparent">
+    <i>support_agent</i>
+  </button>
+</nav>
+</footer>
+</html>
