@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../templates/static/css/reservation.css">
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.4.7/dist/cdn/beer.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.4.9/dist/cdn/beer.min.css" rel="stylesheet">
+    <title>Formulario Solicitud de Hora</title>
+    <link rel="stylesheet" href="../templates/static/css/Prueba.css"> <!-- Agrega tu hoja de estilos aquí si es necesario -->
 </head>
 <body>
     <header class="white">
@@ -62,106 +62,122 @@
       </nav>
       </header>
 
-      <div class="container">
-        <h1>Reserva de Hora SERVIEXPRESS</h1>
-        <form>
-            <!-- Información del Cliente -->
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-    
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" required>
-    
-            <label for="rut">RUT con DV (sin puntos ni guion):</label>
-            <input type="text" id="rut" name="rut" pattern="\d{7,8}" title="Ingrese un RUT válido" required>
-    
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" name="correo" required>
-
-            <label for="Fecha">Fecha Preferida:</label>
-            <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2024-12-31" />
-    
-            <!-- Servicios Solicitados -->
-            <label for="servicios">Puedes Seleccionar hasta 5 Servicios Maximos:</label>
-            <select id="servicios" name="servicios[]" multiple required>
-                <option value="Mantenimiento Preventivo">Mantenimiento Preventivo</option>
-                <option value="Reparaciones Mecánicas">Reparaciones Mecánicas</option>
-                <option value="Servicios de Autotrónica">Servicios de Autotrónica</option>
-                <option value="Alineación y Balanceo">Alineación y Balanceo</option>
-                <option value="Revisión de Sistemas de Escape">Revisión de Sistemas de Escape</option>
-                <!-- Agrega más opciones según sea necesario -->
-            </select>
-    
-            <!-- Detalles del Vehículo -->
-            <label for="patente">Patente:</label>
-            <input type="text" id="patente" name="patente" required>
-    
-            <!-- Dirección -->
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" name="direccion">
-    
-            <!-- Preferencias de Cita -->
-            
-    
-           
-    
-            <label>¿Es una cita de emergencia?</label>
-            <input type="radio" id="emergenciaSi" name="emergencia" value="Si" required>
-            <label for="emergenciaSi">Sí</label>
-            <input type="radio" id="emergenciaNo" name="emergencia" value="No" required>
-            <label for="emergenciaNo">No</label>
-    
-            <!-- Comentarios Adicionales -->
-            <label for="comentarios">Comentarios o instrucciones adicionales:</label>
-            <textarea id="comentarios" name="comentarios" rows="4"></textarea>
-    
-            <!-- Consentimiento y Términos -->
-            <div>
-                <label for="consentimientoComunicaciones">Consentimiento para recibir comunicaciones:</label>
-                <input type="checkbox" id="consentimientoComunicaciones" name="consentimientoComunicaciones" required>
+    <section class="white responsive">   
+        <main class="responsive">
+            <div class="center-align top-align black-text">
+                <h3><b>Formulario Solicitud de Hora</b></h3>
             </div>
-    
-            <div>
-                <label for="aceptaTerminos">Acepto los términos y condiciones:</label>
-                <input type="checkbox" id="aceptaTerminos" name="aceptaTerminos" required>
-            </div>
-    
-            <!-- Enviar Reserva -->
-            <button type="submit">Enviar Reserva</button>
-        </form>
-    </div>
-    
 
+            <form id="solicitudForm" onsubmit="return validarFormulario()">
+                <div class="field label border small round grey-text">
+                    <input type="text" class="blue-border" id="nombre" required>
+                    <label>Nombre</label>
+                </div>
 
+                <div class="field label border small round grey-text">
+                    <input type="text" class="blue-border" id="apellido" required>
+                    <label>Apellido</label>
+                </div>
 
+                <div class="field label border small round grey-text">
+                    <input type="text" class="blue-border" id="rut" pattern="\d{7,8}" title="Ingrese un RUT válido (sin puntos ni guion)" required>
+                    <label>Rut (sin puntos ni guion)</label>
+                </div>
 
+                <div class="field label border small round grey-text">
+                    <input type="email" class="blue-border" id="correo" required>
+                    <label>Correo</label>
+                </div>
 
+                <div class="field label border small round grey-text">
+                    <input type="text" class="blue-border" id="patente" required>
+                    <label>Patente (sin guion ni espacios)</label>
+                </div>
 
+                <div class="field label border small round grey-text">
+                    <input type="text" class="blue-border" id="direccion" required>
+                    <label>Dirección</label>
+                </div>
 
+                <nav class="center-align">
+                    <span class="helper"><b><h6>Seleccione el Servicio:</h6></b></span>
+                </nav>
 
+                <div class="field center-align">
+                    <nav class="center-align">
+                        <label class="radio">
+                            <input type="radio" name="servicio" value="Inspección" required>
+                            <span>Inspección</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="servicio" value="Diagnóstico" required>
+                            <span>Diagnóstico</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="servicio" value="Mejoras" required>
+                            <span>Mejoras</span>
+                        </label>
+                    </nav>
+                </div>
 
+                <div class="field label border small">
+                    <input type="date" class="blue-border" id="fecha" required>
+                    <label>Fecha</label>
+                </div>
 
+                <div class="field label suffix border small">
+                    <input type="time" class="blue-border" id="hora" required>
+                    <label>Hora de reserva</label>
+                    <i>schedule</i>
+                </div>
 
-
+                <div class="field textarea label border blue-border">
+                    <textarea id="comentarios"></textarea>
+                    <label class="grey-text">Comentarios(Marca, año, problema)</label>
+                </div>
+                
+                <div class="field center-align">
+                    <button type="submit" class="primary green medium round">
+                        <span>Enviar Formulario</span>
+                        <i>check</i>
+                    </button>
+                </div>
+            </form>
+        </main>
+    </section>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          const form = document.querySelector('form');
-  
-          form.addEventListener('submit', function(event) {
-              const fechaInput = document.getElementById('fecha');
-  
-              if (!fechaInput.value) {
-                  alert('Por favor, selecciona una fecha de reserva.');
-                  event.preventDefault(); // Evita que el formulario se envíe
-              }
-          });
-      });
-  </script>
-  
+        function validarFormulario() {
+            // Agrega aquí tu lógica de validación personalizada
+            // Retorna true si la validación es exitosa, de lo contrario, retorna false
+            // Puedes mostrar mensajes de error o cambiar el estilo de los campos según sea necesario
+
+            // Ejemplo de validación simple (campos no vacíos)
+            var nombre = document.getElementById('nombre').value;
+            var apellido = document.getElementById('apellido').value;
+            var rut = document.getElementById('rut').value;
+            var correo = document.getElementById('correo').value;
+            var patente = document.getElementById('patente').value;
+            var direccion = document.getElementById('direccion').value;
+            var servicio = document.querySelector('input[name="servicio"]:checked');
+            var fecha = document.getElementById('fecha').value;
+            var hora = document.getElementById('hora').value;
+
+            if (!nombre || !apellido || !rut || !correo || !patente || !direccion || !servicio || !fecha || !hora) {
+                alert('Todos los campos son obligatorios. Por favor, complete el formulario.');
+                return false;
+            }
+
+            // Agrega más validaciones según sea necesario
+            
+            // Si todas las validaciones son exitosas, retorna true
+            return true;
+        }
+    </script>
 
 
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.7/dist/cdn/beer.min.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.9/dist/cdn/beer.min.js"></script>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"></script>
 </body>
 </html>
