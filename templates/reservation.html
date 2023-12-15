@@ -62,86 +62,90 @@
       </nav>
       </header>
 
-    <section class="white responsive">   
-      <main class="responsive">
-        <div class="center-align top-align black-text">
-          <h3><b>Formulario Solicitud de Hora</b></h3>
-        </div>
+      <section class="white responsive">   
+        <main class="responsive">
+            <div class="center-align top-align black-text">
+                <h3><b>Formulario Solicitud de Hora</b></h3>
+            </div>
 
-        <div class="field label border small round grey-text">
-            <input type="text" class="blue-border">
-            <label>Nombre</label>
-          </div>
+            <form id="solicitudForm" onsubmit="return validarFormulario()">
+                <div class="field label border small round grey-text">
+                    <input type="text" class="blue-border" id="nombre" required>
+                    <label>Nombre</label>
+                </div>
 
-          <div class="field label border small round grey-text">
-            <input type="text" class="blue-border">
-            <label>Apellido</label>
-          </div>
+                <div class="field label border small round grey-text">
+                    <input type="text" class="blue-border" id="apellido" required>
+                    <label>Apellido</label>
+                </div>
 
-          <div class="field label border small round grey-text">
-            <input type="number" class="blue-border">
-            <label>Rut(sin puntos ni guion)</label>
-          </div>
+                <div class="field label border small round grey-text">
+                    <input type="text" class="blue-border" id="rut" pattern="\d{7,8}" title="Ingrese un RUT válido (sin puntos ni guion)" required>
+                    <label>Rut (sin puntos ni guion)</label>
+                </div>
 
-          <div class="field label border small round grey-text">
-            <input type="email" class="blue-border">
-            <label>Correo</label>
-          </div>
+                <div class="field label border small round grey-text">
+                    <input type="email" class="blue-border" id="correo" required>
+                    <label>Correo</label>
+                </div>
 
-          <div class="field label border small round grey-text">
-            <input type="text" class="blue-border">
-            <label>Patente (sin guion ni espacios)</label>
-          </div>
+                <div class="field label border small round grey-text">
+                  <input type="text" class="blue-border">
+                  <label>Patente (sin guion ni espacios)</label>
+                </div>
+      
+                <div class="field label border small round grey-text">
+                  <input type="text" class="blue-border">
+                  <label>Direccion</label>
+                </div>
+      
+                <nav class="center-align">
+                  <span class="helper"><b><h6>Seleccione el Servicio:</h6></b></span>
+                </nav>
+      
+                <div class="field center-align">
+                  <nav class="center-align">
+                    <label class="radio">
+                      <input type="radio" name="radio5_">
+                      <span>Inspección</span>
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="radio5_">
+                      <span>Diagnóstico</span>
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="radio5_">
+                      <span>Mejoras</span>
+                    </label>
+                  </nav>
+                </div>
+      
+                <div class="field label border small">
+                  <input type="date" class="blue-border">
+                  <label>Fecha</label>
+                </div>
+      
+                <div class="field label suffix border small">
+                  <input type="time" class="blue-border">
+                  <label>Hora de reserva</label>
+                  <i>schedule</i>
+                </div>
+      
+                <div class="field textarea label border blue-border">
+                  <textarea></textarea>
+                  <label class="grey-text">Comentarios(Marca, año, problema)</label>
+                </div>
 
-          <div class="field label border small round grey-text">
-            <input type="text" class="blue-border">
-            <label>Direccion</label>
-          </div>
+                <!-- Agrega aquí los demás campos del formulario -->
 
-          <nav class="center-align">
-            <span class="helper"><b><h6>Seleccione el Servicio:</h6></b></span>
-          </nav>
-
-          <div class="field center-align">
-            <nav class="center-align">
-              <label class="radio">
-                <input type="radio" name="radio5_">
-                <span>Inspección</span>
-              </label>
-              <label class="radio">
-                <input type="radio" name="radio5_">
-                <span>Diagnóstico</span>
-              </label>
-              <label class="radio">
-                <input type="radio" name="radio5_">
-                <span>Mejoras</span>
-              </label>
-            </nav>
-          </div>
-
-          <div class="field label border small">
-            <input type="date" class="blue-border">
-            <label>Fecha</label>
-          </div>
-
-          <div class="field label suffix border small">
-            <input type="time" class="blue-border">
-            <label>Hora de reserva</label>
-            <i>schedule</i>
-          </div>
-
-          <div class="field textarea label border blue-border">
-            <textarea></textarea>
-            <label class="grey-text">Comentarios(Marca, año, problema)</label>
-          </div>
-          
-          <div class="field center-align">
-            <button class="primary green medium round">
-            <span>Enviar Formulario</span>
-            <i>check</i>
-            </button>
-          </div>
-      </main>
+                <div class="field center-align">
+                    <button type="submit" class="primary green medium round">
+                        <span>Enviar Formulario</span>
+                        <i>check</i>
+                    </button>
+                </div>
+            </form>
+        </main>
     </section>
 
     <footer class="padding margin top">
@@ -181,7 +185,40 @@
       </nav>
     </footer>
 
+    <script>
+      function validarFormulario() {
+          // Obtener los valores de los campos
+          var nombre = document.getElementById('nombre').value;
+          var apellido = document.getElementById('apellido').value;
+          var rut = document.getElementById('rut').value;
+          var correo = document.getElementById('correo').value;
 
+          // Validar que los campos no estén vacíos
+          if (!nombre || !apellido || !rut || !correo) {
+              alert('Todos los campos son obligatorios. Por favor, complete el formulario.');
+              return false;
+          }
+
+          // Validar el formato del RUT (opcional)
+          var rutRegExp = /^\d{7,8}$/;
+          if (!rutRegExp.test(rut)) {
+              alert('Ingrese un RUT válido (sin puntos ni guion).');
+              return false;
+          }
+
+          // Validar el formato del correo electrónico
+          var correoRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!correoRegExp.test(correo)) {
+              alert('Ingrese un correo electrónico válido.');
+              return false;
+          }
+
+          // Puedes agregar más validaciones según sea necesario
+
+          // Si todas las validaciones son exitosas, retorna true
+          return true;
+      }
+  </script>
       
     <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.7/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"></script>
