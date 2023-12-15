@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../templates/static/css/Provedores.css">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.4.7/dist/cdn/beer.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="white">
+        <nav class="primary-container white right-margin">
+          <img class="logoNav" src="../templates/static/img/logoServiexpress.svg">
+        <nav class="max right-align round no-space">
+          <button class="primary light-blue10 border left-round small">
+            <i class>
+              <span class="material-symbols-outlined">home</span>
+            </i>
+            Home
+          </button>
+          <button class="primary light-blue10 small border no-round">
+            <i class>
+              <span class="material-symbols-outlined">service_toolbox</span>
+            </i>
+            Servicios
+          </button>
+          <button class="primary light-blue10 small border no-round">
+            <i class>
+              <span class="material-symbols-outlined">groups</span>
+            </i>
+            Nosotros
+          </button>
+          <button class="primary light-blue10 small no-round">
+            <i class>
+              <span class="material-symbols-outlined">rss_feed</span>
+            </i>
+            Blog
+          </button>
+          <button class="primary light-blue10 small no-round">
+            <i class>
+              <span class="material-symbols-outlined">contact_page</span>
+            </i>
+            Contacto
+          </button>
+          
+          <button class="primary light-blue10 small no-round">
+            <span>Cuenta</span>
+            <i>account_circle</i>
+            <menu class="no-wrap">
+              <a class="primary light-blue10 small no-round">Login</a>
+              <a class="primary light-blue10 small no-round">Crear</a>
+            </menu>
+          </button>
+  
+          <button class="primary red7 small right-round">
+            <i class>
+              <span class="material-symbols-outlined">event</span>
+            </i>
+            Reservar Hora
+          </button>
+        </nav>
+      </nav>
+      </header><br>
+
+      <div id="miCarrusel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../templates/static/img/Carrusel_1.jpg" class="d-block w-100" alt="Primera Imagen">
+            </div>
+            <div class="carousel-item">
+                <img src="../templates/static/img/Carrusel_2.jpeg" class="d-block w-100" alt="Segunda Imagen">
+            </div>
+            <div class="carousel-item">
+                <img src="../templates/static/img/Carrusel_3.webp" class="d-block w-100" alt="Tercera Imagen">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#miCarrusel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#miCarrusel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+    
+      <div class="container">
+        <div class="card" id="proveedor1">
+            <h2>Marcos</h2>
+    
+            <div>
+                <p> Repuestos para autos</p>
+                <input type="checkbox" id="repuestosAutos" name="repuestosAutos">
+                <label for="repuestosAutos">Seleccionar</label>
+    
+                <p> Pastillas para los frenos</p>
+                <input type="checkbox" id="pastillasFrenos" name="pastillasFrenos">
+                <label for="pastillasFrenos">Seleccionar</label>
+            </div>
+    
+            <button onclick="agregarAlCarrito('Proveedor 1', obtenerProductosSeleccionados('proveedor1'), 50)">Agregar al Carrito</button>
+        </div>
+
+        <div class="card" id="proveedor2">
+            <h2>Benjamin</h2>
+    
+            <div>
+                <p> Aceites y lubricantes</p>
+                <input type="checkbox" id="aceitesLubricantes" name="aceitesLubricantes">
+                <label for="aceitesLubricantes">Seleccionar</label>
+    
+                <p> Motor</p>
+                <input type="checkbox" id="motor" name="motor">
+                <label for="motor">Seleccionar</label>
+            </div>
+    
+            <button onclick="agregarAlCarrito('Proveedor 2', obtenerProductosSeleccionados('proveedor2'), 30)">Agregar al Carrito</button>
+        </div>
+    
+        <div class="card" id="proveedor3">
+            <h2>Jesica</h2>
+    
+            <div>
+                <p> Neumáticos</p>
+                <input type="checkbox" id="neumaticos" name="neumaticos">
+                <label for="neumaticos">Seleccionar</label>
+    
+                <p> Bomba de agua</p>
+                <input type="checkbox" id="bombaAgua" name="bombaAgua">
+                <label for="bombaAgua">Seleccionar</label>
+            </div>
+    
+            <button onclick="agregarAlCarrito('Proveedor 3', obtenerProductosSeleccionados('proveedor3'), 60)">Agregar al Carrito</button>
+        </div>
+    
+       
+    
+    </div>
+    
+    <button id="carrito" onclick="mostrarCarrito()">Ver Carrito</button>
+    
+    <div class="carrito-container" id="carritoContainer">
+        <h2>Carrito de Compras</h2>
+        <div id="carritoItems"></div>
+        <div class="carrito-total" id="carritoTotal">Total: $0</div>
+    </div>
+
+  
+    
+    <script>
+        const carrito = [];
+    
+        function agregarAlCarrito(proveedor, productos, precio) {
+            if (productos.length > 0) {
+                carrito.push({ proveedor, productos, precio });
+                actualizarCarrito();
+            } else {
+                alert('Selecciona al menos un producto antes de agregar al carrito.');
+            }
+        }
+    
+        function obtenerProductosSeleccionados(proveedorId) {
+            const productosSeleccionados = [];
+            const checkboxes = document.querySelectorAll(`#${proveedorId} input[type="checkbox"]:checked`);
+    
+            checkboxes.forEach(checkbox => {
+                productosSeleccionados.push(checkbox.nextElementSibling.textContent.trim());
+            });
+    
+            return productosSeleccionados;
+        }
+    
+        function eliminarDelCarrito(index) {
+            carrito.splice(index, 1);
+            actualizarCarrito();
+        }
+    
+        function actualizarCarrito() {
+            const carritoItems = document.getElementById('carritoItems');
+            const carritoTotal = document.getElementById('carritoTotal');
+    
+            carritoItems.innerHTML = '';
+            let total = 0;
+    
+            carrito.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('carrito-item');
+                itemDiv.innerHTML = `
+                    <span>${item.productos.join(', ')} - ${item.proveedor}</span>
+                    <span>$${item.precio}</span>
+                    <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
+                carritoItems.appendChild(itemDiv);
+                total += item.precio;
+            });
+    
+            carritoTotal.textContent = `Total: $${total.toFixed(2)}`;
+        }
+    
+        function mostrarCarrito() {
+            const carritoContainer = document.getElementById('carritoContainer');
+            carritoContainer.style.display = carritoContainer.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.7/dist/cdn/beer.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"></script>
+</body>
+</html>
