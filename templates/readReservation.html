@@ -67,79 +67,54 @@
             <div class="center-align top-align black-text">
                 <h3><b>Formulario Solicitud de Hora</b></h3>
             </div>
+            <form id="solicitudForm">
 
-            <form id="solicitudForm" onsubmit="return validarFormulario()">
-                <div class="field label border small round grey-text">
-                    <input type="text" class="blue-border" id="nombre" required>
-                    <label>Nombre</label>
-                </div>
-
-                <div class="field label border small round grey-text">
-                    <input type="text" class="blue-border" id="apellido" required>
-                    <label>Apellido</label>
-                </div>
-
-                <div class="field label border small round grey-text">
-                    <input type="text" class="blue-border" id="rut" pattern="\d{7,8}" title="Ingrese un RUT válido (sin puntos ni guion)" required>
-                    <label>Rut (sin puntos ni guion)</label>
-                </div>
-
-                <div class="field label border small round grey-text">
-                  <input type="number" class="blue-border" id="telefono" required>
-                  <label>Teléfono (912345678)</label>
+              <div class="field label border small round grey-text">
+                <input type="text" class="blue-border" id="buscarRut">
+                <label>Rut (sin puntos ni guion)</label>
+                <button type="button" id="get" class="primary blue medium round">Buscar rut</button>
               </div>
 
-                <div class="field label border small round grey-text">
-                    <input type="email" class="blue-border" id="correo" required>
-                    <label>Correo</label>
-                </div>
-      
-                <nav class="center-align">
-                  <span class="helper"><b><h6>Seleccione el Servicio:</h6></b></span>
-                </nav>
-      
-                <div class="field center-align">
-                  <nav class="center-align">
-                    <label class="radio">
-                      <input type="radio" name="radio5_" value="Inspección">
-                      <span>Inspección</span>
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="radio5_" value="Diagnóstico">
-                      <span>Diagnóstico</span>
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="radio5_" value="Mejoras">
-                      <span>Mejoras</span>
-                    </label>
-                  </nav>
-                </div>
-      
-                <div class="field label border small">
-                  <input type="date" class="blue-border" id="fecha">
-                  <label>Fecha</label>
-                </div>
-      
-                <div class="field label suffix border small">
-                  <input type="time" class="blue-border" id="hora">
-                  <label>Hora de reserva</label>
-                  <i>schedule</i>
-                </div>
-      
-                <div class="field textarea label border blue-border">
-                  <textarea id="observaciones"></textarea>
-                  <label class="grey-text">Observaciones (MARCA, MODELO, VERSIÓN, AÑO, Información relevante)</label>
-                </div>
+              <div class="field label border small round grey-text">
+                <label>Nombre: </label>
+                  <p id="nombre"></p>
+              </div>
 
-                <!-- Agrega aquí los demás campos del formulario -->
+              <div class="field label border small round grey-text">
+                <label>Apellido: </label>
+                  <p id="apellido"></p>
+              </div>
 
-                <div class="field center-align">
-                    <button type="submit" id="submit" class="primary green medium round">
-                        <span>Enviar Formulario</span>
-                        <i>check</i>
-                    </button>
-                </div>
-            </form>
+              <div class="field label border small round grey-text">
+                <label>Teléfono: </label> 
+                <p id="telefono" ></p>
+              </div>
+
+              <div class="field label border small round grey-text">
+                <label>Correo: </label> 
+                <p id="correo" ></p>
+            </div>
+
+              <div class="field label border small round grey-text">
+                <label>Servicio: </label> 
+                <p id="servicio" ></p>
+              </div>
+    
+              <div class="field label border small round grey-text">
+                <label>Fecha: </label> 
+                <p id="fecha" ></p>
+              </div>
+    
+              <div class="field label border small round grey-text">
+                <label>Hora: </label> 
+                <p id="hora" ></p>
+              </div>
+    
+              <div class="field label border small round grey-text">
+                <label>Observaciones: </label> 
+                <p id="observaciones" ></p>
+              </div>
+          </form>
         </main>
     </section>
 
@@ -200,37 +175,35 @@
       const app = initializeApp(firebaseConfig);
       const db = getDatabase(app);
   
-      function crearReserva() {
-          // Obtén una referencia única para cada reserva
-          const reservaRef = ref(db, 'reservaHora/' + document.getElementById("rut").value);
-          var radioButtons = document.getElementsByName("radio5_");
-          var valorSeleccionado;
+      function leerReserva() {
+        // Obtén una referencia a la base de datos y al nodo correspondiente al RUT ingresado
+        var referenciaDatos = ref(db, 'reservaHora/' + document.getElementById('buscarRut').value);
 
-          for (var i = 0; i < radioButtons.length; i++) {
-            if (radioButtons[i].checked) {
-              valorSeleccionado = radioButtons[i].value;
-              break; // Romper el bucle una vez que se encuentre el radio button seleccionado
-            }
-          }
-  
-          // Guarda los datos de la reserva en la base de datos
-          set(reservaRef, {
-              nombre: document.getElementById("nombre").value,
-              apellido: document.getElementById("apellido").value,
-              rut: document.getElementById("rut").value,
-              telefono: document.getElementById("telefono").value,
-              correo: document.getElementById("correo").value,
-              servicio: valorSeleccionado,
-              fecha: document.getElementById("fecha").value,
-              hora: document.getElementById("hora").value,
-              observaciones: document.getElementById("observaciones").value
-          });
-  
-          alert("Datos enviados");
-      }
-  
-      // Asigna la función reservarHora al evento click del botón con el id 'submit'
-      document.getElementById('submit').addEventListener('click', crearReserva);
+        // Obtén datos de Firebase
+        get(referenciaDatos)
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    const data = snapshot.val();
+                    document.getElementById('nombre').textContent = data.nombre;
+                    document.getElementById('apellido').textContent = data.apellido;
+                    document.getElementById('telefono').textContent = data.telefono;
+                    document.getElementById('correo').textContent = data.correo;
+                    document.getElementById('servicio').textContent = data.servicio;
+                    document.getElementById('fecha').textContent = data.fecha;
+                    document.getElementById('hora').textContent = data.hora;
+                    document.getElementById('observaciones').textContent = data.observaciones;
+                } else {
+                    console.log('Sin datos');
+                    alert("ESTE RUT NO EXISTE")
+                }
+            })
+            .catch((error) => {
+                console.error('Error al leer datos:', error);
+            });
+    }
+
+    // Asigna la función leerReserva al evento click del botón con el id 'submit'
+    document.getElementById('get').addEventListener('click', leerReserva);
   
   </script>
 
