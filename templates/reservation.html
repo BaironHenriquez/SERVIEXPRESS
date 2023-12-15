@@ -62,6 +62,69 @@
       </nav>
       </header>
 
+      <div class="container">
+        <h1>Reserva de Hora  SERVIEXPRESS</h1>
+        <form>
+            <!-- Información del Cliente -->
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+    
+            <label for="telefono">Número de teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+    
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <!-- Detalles del Vehículo -->
+            <label for="marcaModelo">Marca y modelo del vehículo:</label>
+            <input type="text" id="marcaModelo" name="marcaModelo" required>
+    
+            <label for="anoFabricacion">Año de fabricación:</label>
+            <input type="text" id="anoFabricacion" name="anoFabricacion" required>
+    
+            <label for="placaVIN">Número de placa o VIN:</label>
+            <input type="text" id="placaVIN" name="placaVIN" required>
+    
+            <!-- Servicios Solicitados -->
+            <label for="tipoServicio">Tipo de servicio:</label>
+            <select id="tipoServicio" name="tipoServicio" required>
+                <option value="Mantenimiento Preventivo">Mantenimiento Preventivo</option>
+                <option value="Reparaciones Mecánicas">Reparaciones Mecánicas</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
+    
+            <label for="descripcionServicio">Descripción detallada de los servicios solicitados:</label>
+            <textarea id="descripcionServicio" name="descripcionServicio" rows="4" required></textarea>
+    
+            <!-- Preferencias de Cita -->
+            <label for="fecha">Fecha preferida:</label>
+            <input type="date" id="fecha" name="fecha" required>
+    
+            <label for="hora">Hora preferida:</label>
+            <input type="time" id="hora" name="hora" required>
+    
+            <label>¿Es una cita de emergencia?</label>
+            <input type="radio" id="emergenciaSi" name="emergencia" value="Si" required>
+            <label for="emergenciaSi">Sí</label>
+            <input type="radio" id="emergenciaNo" name="emergencia" value="No" required>
+            <label for="emergenciaNo">No</label>
+    
+            <!-- Comentarios Adicionales -->
+            <label for="comentarios">Comentarios o instrucciones adicionales:</label>
+            <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+    
+            <!-- Consentimiento y Términos -->
+            <label>Consentimiento para recibir comunicaciones:</label>
+            <input type="checkbox" id="consentimientoComunicaciones" name="consentimientoComunicaciones" required>
+    
+            <label>Acepto los términos y condiciones:</label>
+            <input type="checkbox" id="aceptaTerminos" name="aceptaTerminos" required>
+    
+            <!-- Enviar Reserva -->
+            <button type="submit">Enviar Reserva</button>
+        </form>
+    </div>
+
 
 
 
