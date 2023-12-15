@@ -90,7 +90,7 @@
 
           <div class="field label border small round grey-text">
             <input type="text" class="blue-border">
-            <label>Patente</label>
+            <label>Patente (sin guion ni espacios)</label>
           </div>
 
           <div class="field label border small round grey-text">
@@ -98,56 +98,41 @@
             <label>Direccion</label>
           </div>
 
-          <button class="light-blue10">
-            <span>Servicio a Solicitar</span>
-            <i>arrow_drop_down</i>
-            <menu>
-              <a>Inspección</a>
-              <a>Diagnóstico</a>
-              <a>Mejoras</a>
-            </menu>
-          </button>
+          <nav class="center-align">
+            <span class="helper"><b><h6>Seleccione el Servicio:</h6></b></span>
+          </nav>
 
-          <div class="field middle-align">
-            <nav>
-                <b>Seleccion de Servicios:</b>
-              <label class="checkbox">
-                <input type="checkbox">
-                <span>Mantenimiento Preventivo</span>
+          <div class="field center-align">
+            <nav class="center-align">
+              <label class="radio">
+                <input type="radio" name="radio5_">
+                <span>Inspección</span>
               </label>
-              <label class="checkbox">
-                <input type="checkbox">
-                <span>Reparaciones Mecanicas</span>
+              <label class="radio">
+                <input type="radio" name="radio5_">
+                <span>Diagnóstico</span>
               </label>
-              <label class="checkbox">
-                <input type="checkbox">
-                <span>Servicio De Autotrónica</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox">
-                <span>Alineación y Balanceo</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox">
-                <span>Revision del sistema de Escape</span>
+              <label class="radio">
+                <input type="radio" name="radio5_">
+                <span>Mejoras</span>
               </label>
             </nav>
           </div>
 
           <div class="field label border small">
-            <input type="date">
-            <label>Date</label>
+            <input type="date" class="blue-border">
+            <label>Fecha</label>
           </div>
 
           <div class="field label suffix border small">
-            <input type="time">
+            <input type="time" class="blue-border">
             <label>Hora de reserva</label>
             <i>schedule</i>
           </div>
 
-          <div class="field textarea label border round">
+          <div class="field textarea label border blue-border">
             <textarea></textarea>
-            <label>Comentarios(Marca,año,problema)</label>
+            <label class="grey-text">Comentarios(Marca,año,problema)</label>
           </div>
 
           <button>Reservar Hora</button>
