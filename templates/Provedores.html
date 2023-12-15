@@ -97,11 +97,11 @@
             <div>
                 <p> Repuestos para autos</p>
                 <input type="checkbox" id="repuestosAutos" name="repuestosAutos">
-                <label for="repuestosAutos">Seleccionar</label>
+                <label for="repuestosAutos"></label>
     
                 <p> Pastillas para los frenos</p>
                 <input type="checkbox" id="pastillasFrenos" name="pastillasFrenos">
-                <label for="pastillasFrenos">Seleccionar</label>
+                <label for="pastillasFrenos"></label>
             </div>
     
             <button onclick="agregarAlCarrito('Proveedor 1', obtenerProductosSeleccionados('proveedor1'), 50)">Agregar al Carrito</button>
@@ -113,11 +113,11 @@
             <div>
                 <p> Aceites y lubricantes</p>
                 <input type="checkbox" id="aceitesLubricantes" name="aceitesLubricantes">
-                <label for="aceitesLubricantes">Seleccionar</label>
+                <label for="aceitesLubricantes"></label>
     
                 <p> Motor</p>
                 <input type="checkbox" id="motor" name="motor">
-                <label for="motor">Seleccionar</label>
+                <label for="motor">r</label>
             </div>
     
             <button onclick="agregarAlCarrito('Proveedor 2', obtenerProductosSeleccionados('proveedor2'), 30)">Agregar al Carrito</button>
@@ -129,11 +129,11 @@
             <div>
                 <p> Neumáticos</p>
                 <input type="checkbox" id="neumaticos" name="neumaticos">
-                <label for="neumaticos">Seleccionar</label>
+                <label for="neumaticos"></label>
     
                 <p> Bomba de agua</p>
                 <input type="checkbox" id="bombaAgua" name="bombaAgua">
-                <label for="bombaAgua">Seleccionar</label>
+                <label for="bombaAgua"></label>
             </div>
     
             <button onclick="agregarAlCarrito('Proveedor 3', obtenerProductosSeleccionados('proveedor3'), 60)">Agregar al Carrito</button>
@@ -147,17 +147,12 @@
     <button id="carrito" onclick="mostrarCarrito()">Ver Carrito</button>
     
     <div class="carrito-container" id="carritoContainer">
-        <h2>Carrito de Compras</h2>
-        <div id="carritoItems"></div>
-        <div class="carrito-total" id="carritoTotal">Total: $0</div>
+      <h2>Carrito de Compras</h2>
+      <div id="carritoItems"></div>
+      <div class="carrito-total" id="carritoTotal">Total: $0</div>
     </div>
+  </body>
 
-    
-
-
-
-  
-    
     <script>
         const carrito = [];
     
@@ -218,5 +213,4 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.7/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"></script>
-</body>
 </html>
